@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sqlDB = myHelper.getWritableDatabase();
+                //근데 여기서 먼저 데이터베이스를 확인해서 이름이 중복이면 입력이 안되게 만들어야됨 ㅋㅋㅋㅋㅋㅋ
+                //중복입력해버리면 프라이머리키가 중복이 된다.
+
+
+                //(2021-04-14)
                 sqlDB.execSQL("INSERT INTO groupTBL VALUES('" + edtName.getText().toString() +"',"
                         +edtNumber.getText().toString() +");");
 
